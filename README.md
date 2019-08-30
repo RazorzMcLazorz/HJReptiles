@@ -1,5 +1,4 @@
-# React/Redux/Router Starter Project
+# React/Redux/Router HJReptiles Project
 
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
-
-*Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
+This is the website source code of HJReptiles Website
+as of this moment the website is not hosted
