@@ -4,11 +4,17 @@ import * as actions from '../reducers/actions'
 import Footer from './parts/Footer'
 import NavBar from './parts/NavBar'
 
-class App extends Component {
+class Login extends Component {
+
+  state = {
+  }
+
+  componentDidMount() {
+  }
 
   render() {
     return (
-      <div className='Main'>
+      <div className='login'>
         <NavBar />
             
         <Footer />
@@ -20,5 +26,5 @@ class App extends Component {
 const mapStateToProps = (state) => {
     return state
 }
-App = connect(mapStateToProps, actions)(App);
-export default App;
+Login = connect(mapStateToProps, actions)(Login);
+export default Login;
