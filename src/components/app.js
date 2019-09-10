@@ -10,7 +10,41 @@ class App extends Component {
     return (
       <div className='Main'>
         <NavBar />
-            
+            <div id='center'>
+              <div id='topRow'>
+                <div id='topRowLeft'>
+                  <div>
+                    Logo
+                  </div>
+                  <div>
+                    Search
+                  </div>
+                  <div>
+                    Shop
+                  </div>
+                  <div>
+                    New Stuff
+                  </div>
+                  <div>
+                    Our Store
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    Login 
+                  </div>
+                </div>
+              </div>
+              <div>
+
+              </div>
+              <div>
+
+              </div>
+              <div>
+
+              </div>
+            </div>
         <Footer />
       </div>
     );
