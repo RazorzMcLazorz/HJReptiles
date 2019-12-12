@@ -1,3 +1,9 @@
-# React/Redux/Router HJReptiles Project
+# HJReptiles Project
+Is a friend of mines company website that he has tasked me to work on for him, im creating this website in React.
 
-This is the website source code of __HJReptiles__ Website. as of this moment, the website is not hosted. but will be temporarily hosted on __Heroku__ when completed.
+### ToDo List
+- [ ] setup the home page
+- [ ] setup the repitles page
+- [ ] setup contact page
+- [ ] host website on his wanted host
+- [ ] figure a way to store images else where
