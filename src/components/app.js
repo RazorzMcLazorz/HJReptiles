@@ -9,42 +9,21 @@ class App extends Component {
   render() {
     return (
       <div className='Main'>
-        <NavBar />
-            <div id='center'>
-              <div id='topRow'>
-                <div id='topRowLeft'>
-                  <div>
-                    Logo
-                  </div>
-                  <div>
-                    Search
-                  </div>
-                  <div>
-                    Shop
-                  </div>
-                  <div>
-                    New Stuff
-                  </div>
-                  <div>
-                    Our Store
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    Login 
-                  </div>
-                </div>
-              </div>
-              <div>
-
-              </div>
-              <div>
-
-              </div>
-              <div>
-
-              </div>
-            </div>
+        <NavBar>
+          <a>
+            Search
+          </a>
+          <a>
+            Shop
+          </a>
+          <a>
+            New Stuff
+          </a>
+          <a>
+            Our Store
+          </a>
+        </NavBar>
+            
         <Footer />
       </div>
     );

@@ -2,7 +2,6 @@ import { ADD_ARTICLE, CHANGE_STATE } from "./constants/action-types"
 
 // Redux Store
 const initialState = {
- 
 }
 
 const rootReducer = (state = initialState, action) => {

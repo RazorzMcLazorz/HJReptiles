@@ -20,11 +20,14 @@ class NavBar extends Component {
   render() {
     return(
       <div className="navBar">
-          <div>
-            Call us
-          </div>
-          <div>
+          <div className="navbarLeft">
             Logo
+          </div>
+          <div className="navbarMiddle">
+            {this.props.children}
+          </div>
+          <div className="navbarRight">
+            Call us
           </div>
       </div>
     );
