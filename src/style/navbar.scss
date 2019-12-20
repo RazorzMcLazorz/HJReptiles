@@ -6,6 +6,8 @@
     width: 100vw;
     background-color: green;
     overflow: hidden;
+    z-index: 4;
+    position: static;
     .navbarLeft {
         display: flex;
         flex-direction: row;

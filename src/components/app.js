@@ -23,8 +23,12 @@ class App extends Component {
             Our Store
           </a>
         </NavBar>
-            
-        <Footer />
+          <div className='AppBody'>
+
+          </div>
+        <Footer>
+          Footer
+        </Footer>
       </div>
     );
   }

@@ -1,9 +1,10 @@
 .Main {
-    #center {
-        #topRow {
-            #topRowLeft {
-                
-            }    
-        }
+    .AppBody {
+        display: flex;
+        flex-direction: column;
+        background-color: blue;
+        margin-top: 50px;
+        min-height: 2000px;
+        width: 100vw;
     }
 }

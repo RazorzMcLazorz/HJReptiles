@@ -20,7 +20,12 @@ class Footer extends Component {
   render() {
     return(
       <div className="footer">
-        Footer
+        <div className='footerLeft'>
+          {this.props.children}
+        </div>
+        <div className='footerRight'>
+          version: 1.0
+        </div>
       </div>
     );
   }
