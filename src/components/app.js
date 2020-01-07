@@ -39,7 +39,7 @@ class App extends Component {
         </NavBar>
           <div className='AppBody'>
             <div className="AppPreview">
-              <i className="fas fa-chevron-left" onCLick={() => this.previewChange()}/>
+              <i className="fas fa-chevron-left" onClick={() => this.previewChange()}/>
               <div className='PreviewImage'>
                 <img src={this.state.images[this.state.preview]} />
               </div>
