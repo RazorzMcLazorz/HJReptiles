@@ -44,7 +44,9 @@ class NavBar extends Component {
             <Typography variant="h6" className={useStyles.title}>
               News
             </Typography>
-            {this.props.children}
+            <div style={{display: 'flex', justifyContent: 'space-around', width: '100%'}}>
+              {this.props.children}
+            </div>
             <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
