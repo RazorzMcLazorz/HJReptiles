@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import * as actions from '../reducers/actions'
 import Footer from './parts/Footer'
 import NavBar from './parts/NavBar'
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 class App extends Component {
 
@@ -38,6 +43,9 @@ class App extends Component {
           </a>
         </NavBar>
           <div className='AppBody'>
+            <Card>
+              <img src='https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=500&w=500'/>
+            </Card>
             <div className="AppPreview">
               <i className="fas fa-chevron-left" onClick={() => this.previewChange()}/>
               <div className='PreviewImage'>
