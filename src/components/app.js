@@ -14,10 +14,10 @@ class App extends Component {
 
   state={
     images: [
-      'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
-      'https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-      'https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-      'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+      'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=500&w=500',
+      'https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
+      'https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
+      'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500'
     ]
   }
 
@@ -38,16 +38,12 @@ class App extends Component {
             Our Store
           </a>
         </NavBar>
-          <Paper>
-            <Card>
-              <img src='https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=500&w=500'/>
-            </Card>
-            <Card>
-              <img src='https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500'/>
-            </Card>
-            <Card>
-              <img src='https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500'/>
-            </Card>
+          <Paper style={{ display: 'flex', flexDirection: 'column', width: '100vw' }}>
+            {this.state.images.map((pic, num) =>
+              <Card key={num} style={{ display: 'flex', width:'100%', height: 500, flexDirection: num % 2 ? 'row-reverse' : 'row'}}>
+                <img style={{width: 800}} src={pic}/>
+              </Card>
+            )}
           </Paper>
         <Footer>
           Footer
