@@ -9,10 +9,12 @@ import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 class App extends Component {
 
   state={
+    loading: true,
     images: [
       'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=500&w=500',
       'https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
@@ -20,6 +22,14 @@ class App extends Component {
       'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500'
     ]
   }
+
+  componentDidMount() {
+    this.setState({
+      loading: false
+    })
+  }
+
+  
 
   render() {
     return (
@@ -38,6 +48,9 @@ class App extends Component {
             Our Store
           </a>
         </NavBar>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          {this.state.loading &&
+            <CircularProgress />}
           <Paper style={{ display: 'flex', flexDirection: 'column', width: '100vw' }}>
             {this.state.images.map((pic, num) =>
               <Card key={num} style={{ display: 'flex', width:'100%', height: 500, flexDirection: num % 2 ? 'row-reverse' : 'row'}}>
@@ -45,6 +58,7 @@ class App extends Component {
               </Card>
             )}
           </Paper>
+        </div>
         <Footer>
           Footer
         </Footer>
