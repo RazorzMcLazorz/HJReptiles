@@ -51,9 +51,9 @@ class App extends Component {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           {this.state.loading &&
             <CircularProgress />}
-          <Paper style={{ display: 'flex', flexDirection: 'column', width: '100vw' }}>
+          <Paper style={{ display: 'flex', flexDirection: 'column', width: '100vw', overflow: 'hidden' }}>
             {this.state.images.map((pic, num) =>
-              <Card key={num} style={{ display: 'flex', width:'100%', height: 500, flexDirection: num % 2 ? 'row-reverse' : 'row'}}>
+              <Card key={num} className={num % 2 ? 'cardSlantLeft' : 'cardSlantRight'} style={{ display: 'flex', width:'100%', height: 500, flexDirection: num % 2 ? 'row-reverse' : 'row' }}>
                 <img style={{width: 800}} src={pic}/>
               </Card>
             )}
