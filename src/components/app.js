@@ -10,16 +10,53 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import { makeStyles } from '@material-ui/core/styles'
+import GridList from '@material-ui/core/GridList'
+import GridListTile from '@material-ui/core/GridListTile'
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    width: 500,
+    height: 450,
+  },
+}))
 
 class App extends Component {
 
   state={
     loading: true,
     images: [
-      'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=500&w=500',
-      'https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
-      'https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
-      'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500'
+      {
+        img: 'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=500&w=500',
+        title: 'Image',
+        author: '',
+        cols: 2
+      },
+      {
+        img: 'https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
+        title: 'Image',
+        author: '',
+        cols: 2
+      },
+      {
+        img: 'https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
+        title: 'Image',
+        author: '',
+        cols: 2
+      },
+      {
+        img: 'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500',
+        title: 'Image',
+        author: '',
+        cols: 2
+      }
     ]
   }
 
@@ -30,6 +67,24 @@ class App extends Component {
   }
 
   
+// /**
+//  * The example data is structured as follows:
+//  *
+//  * import image from 'path/to/image.jpg';
+//  * [etc...]
+//  *
+//  * const tileData = [
+//  *   {
+//  *     img: image,
+//  *     title: 'Image',
+//  *     author: 'author',
+//  *     cols: 2,
+//  *   },
+//  *   {
+//  *     [etc...]
+//  *   },
+//  * ];
+//  */
 
   render() {
     return (
@@ -48,27 +103,25 @@ class App extends Component {
             Our Store
           </a>
         </NavBar>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          {this.state.loading &&
-            <CircularProgress />}
-          <Paper style={{ display: 'flex', flexDirection: 'column', width: '100vw', overflow: 'hidden' }}>
-            {this.state.images.map((pic, num) =>
-              <Card key={num} className={num % 2 ? 'cardSlantLeft' : 'cardSlantRight'} style={{ display: 'flex', width:'100%', height: 500, flexDirection: num % 2 ? 'row-reverse' : 'row' }}>
-                <img style={{width: 800}} src={pic}/>
-              </Card>
-            )}
-          </Paper>
+        <div className={useStyles.root}>
+          <GridList cellHeight={160} className={useStyles.gridList} cols={3}>
+            {this.state.images.map(tile => (
+              <GridListTile key={tile.img} cols={tile.cols || 1}>
+                <img src={tile.img} alt={tile.title} />
+              </GridListTile>
+            ))}
+          </GridList>
         </div>
         <Footer>
           Footer
         </Footer>
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = (state) => {
     return state
 }
-App = connect(mapStateToProps, actions)(App);
-export default App;
+App = connect(mapStateToProps, actions)(App)
+export default App

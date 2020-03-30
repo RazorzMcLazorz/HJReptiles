@@ -9,11 +9,13 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import { Paper } from '@material-ui/core'
+import { grey } from '@material-ui/core/colors'
 
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -36,7 +38,7 @@ class NavBar extends Component {
 
   render() {
     return(
-      <div className={useStyles.root}>
+      <Paper className={useStyles.root}>
         <AppBar position="static">
           <Toolbar>
             <IconButton edge="start" className={useStyles.menuButton} color="inherit" aria-label="menu">
@@ -51,18 +53,7 @@ class NavBar extends Component {
             <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
-      </div>
-      // <div className="navBar">
-      //     <div className="navbarLeft">
-      //       Logo
-      //     </div>
-      //     <div className="navbarMiddle">
-      //       {this.props.children}
-      //     </div>
-      //     <div className="navbarRight">
-      //       Call us
-      //     </div>
-      // </div>
+      </Paper>
     )
   }
 }
